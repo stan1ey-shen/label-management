@@ -1,5 +1,13 @@
 name: Sync labels
 on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: "The repo to sync labels on"
+        required: true
+      token:
+        description: "An alternative GitHub token to use instead"
+        required: true
   push:
     branches:
       - main
@@ -12,7 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: micnncim/action-label-syncer@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ github.event_name == 'push' }}
         with:
           manifest: .github/labels.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: micnncim/action-label-syncer@v1
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        with:
+          manifest: .github/labels.yml
+          repository: ${{ inputs.repository }}
+          token: ${{ inputs.token }}
