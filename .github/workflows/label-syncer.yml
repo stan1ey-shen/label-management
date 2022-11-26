@@ -22,11 +22,9 @@ jobs:
       - uses: micnncim/action-label-syncer@v1
         if: ${{ github.event_name == 'push' }}
         with:
-          manifest: .github/labels.yml
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: micnncim/action-label-syncer@v1
         if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
-          manifest: .github/labels.yml
           repository: ${{ inputs.repository }}
           token: ${{ inputs.token }}
