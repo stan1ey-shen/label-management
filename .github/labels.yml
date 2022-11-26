@@ -1,15 +1,22 @@
-- color: d73a4a
-  description: Something isn't working
-  name: "Type: bug"
-- color: 0075ca
-  description: Improvements or additions to documentation
-  name: documentation
-- color: cfd3d7
-  description: This issue or pull request already exists
-  name: duplicate
-- color: a2eeef
-  description: New feature or request
-  name: enhancement
-- color: "008672"
-  description: Extra attention is needed
-  name: help wanted
+- name: "Size: 1"
+  color: fefcbc
+- name: "Size: 2"
+  color: fcf849
+- name: "Size: 3"
+  color: fcf71d
+- name: "Size: 5"
+  color: efe903
+- name: "Size: 8"
+  color: cdc803
+- name: "Size: 13"
+  color: b0ac02
+- name: "Size: 21"
+  color: 777402
+- name: "Size: 34"
+  color: 696701
+- name: "Size: 55"
+  color: 5a5801
+- name: "Size: 89"
+  color: 434101
+- name: "Size: ∞"
+  color: 302f01
